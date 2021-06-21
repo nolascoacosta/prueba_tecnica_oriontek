@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 /** Representa un Usuario en la base de datos.
  *
  * @property int            $id
+ * @property boolean        $is_admin
  * @property string         $name
  * @property string         $email
  * @property string         $password
@@ -31,6 +32,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'is_admin',
         'email',
         'password',
     ];
