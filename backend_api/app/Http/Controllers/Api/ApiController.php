@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Services\ApiMessageBuilder;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Routing\ResponseFactory;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 abstract class ApiController extends Controller
 {
@@ -54,6 +58,7 @@ abstract class ApiController extends Controller
             $this->middleware($permission,$methods);
         }
     }
+
 
     /**
      * Loads relationships dynamically for a given model.

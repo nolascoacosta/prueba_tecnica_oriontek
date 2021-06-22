@@ -29,4 +29,14 @@ class Cliente extends Model
         'nombre_completo',
         'telefono',
     ];
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class);
+    }
+
+    public function direcciones()
+    {
+        return $this->hasMany(Direccion::class);
+    }
 }

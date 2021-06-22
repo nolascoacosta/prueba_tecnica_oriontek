@@ -32,4 +32,9 @@ class Direccion extends Model
         'municipio',
         'provincia',
     ];
+
+    public function empresa()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
 }
