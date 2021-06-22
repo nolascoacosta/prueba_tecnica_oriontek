@@ -35,8 +35,6 @@ class ClienteController extends ApiController
     {
         try {
             DB::beginTransaction();
-           // $request->merge(["empresa_id"=> auth()->user()->id]);
-            //$cliente = Cliente::create($request->all());
             $cliente = new Cliente;
             $cliente->nombre_completo = $request->get("nombre_completo");
             $cliente->telefono = $request->get("telefono");
